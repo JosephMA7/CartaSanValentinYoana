@@ -53,11 +53,14 @@ body {
 .card:hover {
     transform: scale(1.1);
 }
+
 /* Estilo para la galería */
 .gallery-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    max-height: 90vh; /* Agrega límite de altura */
+    overflow-y: auto; /* Permite desplazamiento vertical */
 }
 
 h1 {
@@ -83,11 +86,18 @@ h1 {
     transition: transform 0.3s ease-in-out;
 }
 
-.photo-card img {
+.photo-card img,
+.photo-card video {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 250px; /* Tamaño uniforme */
+    object-fit: cover; /* Recorta y ajusta la imagen/video sin deformarlo */
     border-bottom: 2px solid #ff80bf;
+}
+
+/* Ajuste especial para el video */
+.photo-card video {
+    height: 250px; /* Mismo tamaño que las imágenes */
+    border-radius: 0; /* Para que coincida con el diseño */
 }
 
 .photo-card p {
@@ -118,4 +128,10 @@ h1 {
 
 .back-button:hover {
     background: #ff1e68;
+}
+
+/* Permitir desplazamiento en toda la página */
+html, body {
+    height: 100%;
+    overflow-y: auto;
 }

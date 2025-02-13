@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestros Momentos 💕</title>
+    <link rel="icon" type="image/png" href="img/oso.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="gallery-container">
         <h1>Nuestros Momentos 💖</h1>
         <div class="gallery">
-            <div class="photo-card">
-                <img src="img/foto1.jpg" alt="Nosotros">
-                <p>"Nuestro primer viaje juntos"</p>
-            </div>
-            <div class="photo-card">
-                <img src="img/foto2.jpg" alt="Nosotros">
-                <p>"Siempre a tu lado 💕"</p>
-            </div>
-            <div class="photo-card">
-                <img src="img/foto3.jpg" alt="Nosotros">
-                <p>"El mejor día de mi vida"</p>
-            </div>
+            <!-- Cards para cada mes -->
+            <script>
+                const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+                meses.forEach((mes, index) => {
+                    document.write(`
+                        <div class="photo-card" onclick="location.href='mes${index + 1}.html'">
+                            <img src="img/${mes.toLowerCase()}.jpeg" alt="${mes}">
+                            <p>📅 ${mes}</p>
+                        </div>
+                    `);
+                });
+            </script>
         </div>
         <a href="index.html" class="back-button">Volver</a>
     </div>
 </body>
 </html>
+
