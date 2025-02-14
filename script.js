@@ -27,6 +27,17 @@ function createFloatingImages() {
         });
     }
 }
+document.addEventListener("DOMContentLoaded", function() {
+    let audio = document.createElement("audio");
+    audio.src = "audio/LATIN MAFIA - Yo siempre contesto. (Visualizer).mp3";
+    audio.loop = true;
+    document.body.appendChild(audio);
+
+    document.addEventListener("click", function() {
+        audio.play();
+    }, { once: true });
+});
+
 
 // Llamar a la función para crear los corazones flotantes al cargar la página
 window.onload = createFloatingImages;
