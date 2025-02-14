@@ -9,16 +9,32 @@
 </head>
 <body>
     <div class="gallery-container">
-        <h1>Nuestros Momentos 💖</h1>
+        <h1>Nuestra Galería 2024-2025 💖</h1>
         <div class="gallery">
             <!-- Cards para cada mes -->
             <script>
-                const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+                const meses = [
+                    { nombre: "Enero", imagen: "enero.jpeg" },
+                    { nombre: "Febrero", imagen: "febrero.jpeg" },
+                    { nombre: "Marzo", imagen: "marzo.jpeg" },
+                    { nombre: "Abril", imagen: "abril.jpeg" },
+                    { nombre: "Mayo", imagen: "mayo.jpeg" },
+                    { nombre: "Junio", imagen: "junio.jpeg" },
+                    { nombre: "Julio", imagen: "julio.jpeg" },
+                    { nombre: "Agosto", imagen: "agosto.jpeg" },
+                    { nombre: "Septiembre", imagen: "septiembre.jpeg" },
+                    { nombre: "Octubre", imagen: "octubre.jpeg" },
+                    { nombre: "Noviembre", imagen: "noviembre.jpeg" },
+                    { nombre: "Diciembre", imagen: "diciembre.jpeg" },
+                    { nombre: "Enero 2025", imagen: "enero2025.jpeg" },
+                    { nombre: "Febrero 2025", imagen: "febrero2025.jpeg" }
+                ];
+
                 meses.forEach((mes, index) => {
                     document.write(`
                         <div class="photo-card" onclick="location.href='mes${index + 1}.html'">
-                            <img src="img/${mes.toLowerCase()}.jpeg" alt="${mes}">
-                            <p>📅 ${mes}</p>
+                            <img src="img/${mes.imagen}" alt="${mes.nombre}">
+                            <p>📅 ${mes.nombre}</p>
                         </div>
                     `);
                 });
@@ -28,4 +44,3 @@
     </div>
 </body>
 </html>
-
