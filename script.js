@@ -1,5 +1,5 @@
 function openGallery() {
-    window.location.href = "gallery.html";
+    window.location.href = "carta.html"; // Ahora lleva a la carta antes de la galería
 }
 
 // Función para generar corazones flotantes
@@ -12,8 +12,8 @@ function createFloatingHearts() {
         heart.classList.add('heart');
         
         // Posición aleatoria en el eje X y Y de la página
-        heart.style.left = `${Math.random() * 100}vw`; // 100vw para permitir que se muevan de lado a lado
-        heart.style.top = `${Math.random() * 100}vh`; // 100vh para que los corazones puedan comenzar desde cualquier parte de la pantalla
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.top = `${Math.random() * 100}vh`;
 
         // Duración y retraso aleatorio para la animación
         heart.style.animationDuration = `${Math.random() * 3 + 3}s`; // Duración entre 3s y 6s
@@ -30,8 +30,3 @@ function createFloatingHearts() {
 
 // Llamar a la función para crear los corazones al cargar la página
 window.onload = createFloatingHearts;
-
-
-
-
-
