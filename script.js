@@ -3,30 +3,30 @@ function openGallery() {
 }
 
 // Función para generar corazones flotantes
-function createFloatingHearts() {
+function createFloatingImages() {
     const body = document.querySelector('body');
-    const numberOfHearts = 20; // Aumenta el número de corazones flotantes si quieres más
+    const numberOfImages = 20; // Número de corazones flotantes que quieres
 
-    for (let i = 0; i < numberOfHearts; i++) {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
+    for (let i = 0; i < numberOfImages; i++) {
+        const image = document.createElement('div');
+        image.classList.add('floating-image');
         
         // Posición aleatoria en el eje X y Y de la página
-        heart.style.left = `${Math.random() * 100}vw`;
-        heart.style.top = `${Math.random() * 100}vh`;
+        image.style.left = `${Math.random() * 100}vw`;
+        image.style.top = `${Math.random() * 100}vh`;
 
         // Duración y retraso aleatorio para la animación
-        heart.style.animationDuration = `${Math.random() * 3 + 3}s`; // Duración entre 3s y 6s
-        heart.style.animationDelay = `${Math.random() * 5}s`; // Retraso aleatorio entre 0s y 5s
+        image.style.animationDuration = `${Math.random() * 3 + 3}s`; // Duración entre 3s y 6s
+        image.style.animationDelay = `${Math.random() * 5}s`; // Retraso aleatorio entre 0s y 5s
 
-        body.appendChild(heart);
+        body.appendChild(image);
 
-        // Eliminar el corazón después de que termine la animación
-        heart.addEventListener('animationend', () => {
-            heart.remove();
+        // Eliminar la imagen después de que termine la animación
+        image.addEventListener('animationend', () => {
+            image.remove();
         });
     }
 }
 
-// Llamar a la función para crear los corazones al cargar la página
-window.onload = createFloatingHearts;
+// Llamar a la función para crear los corazones flotantes al cargar la página
+window.onload = createFloatingImages;

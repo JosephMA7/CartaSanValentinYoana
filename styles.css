@@ -1,18 +1,18 @@
-/* Fondo con corazones flotantes */
+/* Fondo con imágenes flotantes */
 body {
     font-family: 'Arial', sans-serif;
     background: #fde2e2;
     text-align: center;
     margin: 0;
     padding: 0;
-    background-image: url('images/hearts.png'); /* Asegúrate de que la ruta sea correcta */
+    background-image: url('img/oso.png'); /* Asegúrate de que la ruta sea correcta */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     overflow: hidden;
 }
 
-/* Animación de corazones flotantes */
+/* Animación de imágenes flotantes */
 @keyframes float {
     0% {
         transform: translateY(0) scale(1);
@@ -22,11 +22,11 @@ body {
     }
 }
 
-.heart {
+.floating-image {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-image: url('img/corazon.png');
+    background-image: url('img/corazon.png'); /* Cambia esta ruta por la imagen que desees */
     background-size: cover;
     animation: float 5s ease-in-out infinite;
     pointer-events: none;
