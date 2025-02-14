@@ -29,14 +29,36 @@ function createFloatingImages() {
 }
 document.addEventListener("DOMContentLoaded", function() {
     let audio = document.createElement("audio");
-    audio.src = "audio/LATIN MAFIA - Yo siempre contesto. (Visualizer).mp3";
+    audio.src = "audio/LATIN MAFIA - Yo siempre contesto. (Visualizer).mp3"; // Ruta del archivo de audio
     audio.loop = true;
+    
+    // Verificar si la música ya estaba reproduciéndose
+    let wasPlaying = localStorage.getItem("musicPlaying");
+
+    if (wasPlaying === "true") {
+        audio.play();
+    }
+
     document.body.appendChild(audio);
 
+    // Evento para iniciar la música al hacer clic (Chrome bloquea autoplay)
     document.addEventListener("click", function() {
         audio.play();
+        localStorage.setItem("musicPlaying", "true");
     }, { once: true });
+
+    // Guardar la posición del audio al salir
+    window.addEventListener("beforeunload", function() {
+        localStorage.setItem("musicTime", audio.currentTime);
+    });
+
+    // Restaurar la posición del audio
+    let lastTime = localStorage.getItem("musicTime");
+    if (lastTime) {
+        audio.currentTime = parseFloat(lastTime);
+    }
 });
+
 
 
 // Llamar a la función para crear los corazones flotantes al cargar la página
